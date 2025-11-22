@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nixie Studios Premiere</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0C2B4E;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            background: #F4F4F4;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .logo {
+            max-width: 80px;
+            width: 80px;
+            height: auto;
+            flex-shrink: 0;
+            border-radius: 6px;
+        }
+
+        .welcome-content {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1A3D64;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .welcome-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1D546C;
+            margin-bottom: 10px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1D546C;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 6px;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-link-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+        }
+
+        .follow-btn {
+            padding: 8px 16px;
+            background: #1A3D64;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .follow-btn:hover {
+            background: #1D546C;
+            transform: scale(1.05);
+        }
+
+        .follow-btn.followed {
+            background: #1D546C;
+            cursor: default;
+        }
+
+        .follow-btn.followed:hover {
+            background: #1D546C;
+            transform: none;
+        }
+
+        .follow-btn.followed::before {
+            content: "✓ ";
+            margin-right: 4px;
+        }
+
+        .registration-section {
+            background: white;
+            padding: 30px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .registration-text {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .form-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #1A3D64;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(12, 43, 78, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background: #1D546C;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(12, 43, 78, 0.6);
+        }
+
+        .form-button:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .header-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .logo {
+                max-width: 60px;
+                width: 60px;
+            }
+
+            .welcome-content {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .registration-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <img src="nixie_studios.jpg" alt="Nixie Studios Logo" class="logo">
+            <div class="welcome-content">
+                <h1>Welcome to the Nixie Studios Premiere!</h1>
+                <p class="welcome-text">Join us for an exclusive premiere experience</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Follow Us</h2>
+            <div class="social-links">
+                <div class="social-link">
+                    <div class="social-link-content">
+                        <span class="social-icon">🎵</span>
+                        <span>TikTok: nixie_studios</span>
+                    </div>
+                    <button class="follow-btn" data-platform="tiktok" data-follow-url="https://www.tiktok.com/@nixie_studios" data-follow-app="tiktok://user?username=nixie_studios">Follow</button>
+                </div>
+                <div class="social-link">
+                    <div class="social-link-content">
+                        <span class="social-icon">▶️</span>
+                        <span>YouTube: nixie_studios</span>
+                    </div>
+                    <button class="follow-btn" data-platform="youtube" data-follow-url="https://www.youtube.com/@nixie_studios?sub_confirmation=1" data-follow-app="vnd.youtube://channel/@nixie_studios">Subscribe</button>
+                </div>
+                <div class="social-link">
+                    <div class="social-link-content">
+                        <span class="social-icon">📷</span>
+                        <span>Instagram: nixie_studios</span>
+                    </div>
+                    <button class="follow-btn" data-platform="instagram" data-follow-url="https://www.instagram.com/nixie_studios" data-follow-app="instagram://user?username=nixie_studios">Follow</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Register Your Details for Premiere Updates</h2>
+            <div class="registration-section">
+                <p class="registration-text">
+                    Stay updated with the latest news and exclusive content from Nixie Studios. 
+                    Fill out the form to receive premiere updates and special announcements.
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwg3jPcAaEve2qK3PA4qDSsTGTxw-NqgYrQZ0cBCdACqrryw/viewform?usp=publish-editor" 
+                   class="form-button">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to detect and open apps
+        function openAppOrWeb(event, appScheme, webUrl) {
+            event.preventDefault();
+            
+            // Check if we're on mobile
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (!isMobile) {
+                // On desktop, just open web URL
+                window.location.href = webUrl;
+                return;
+            }
+
+            // Try to open the app
+            let appOpened = false;
+            const startTime = Date.now();
+            
+            // Create a hidden iframe to attempt app launch
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = appScheme;
+            document.body.appendChild(iframe);
+            
+            // Check if app opened by monitoring page visibility
+            const checkAppOpened = () => {
+                const elapsed = Date.now() - startTime;
+                
+                // If page lost focus quickly, app likely opened
+                if (document.hidden || elapsed < 2000) {
+                    appOpened = true;
+                }
+                
+                // Clean up iframe
+                setTimeout(() => {
+                    document.body.removeChild(iframe);
+                }, 100);
+                
+                // If app didn't open, fallback to web
+                if (!appOpened && elapsed >= 2000) {
+                    window.location.href = webUrl;
+                }
+            };
+            
+            // Listen for page visibility changes
+            document.addEventListener('visibilitychange', function handler() {
+                if (document.hidden) {
+                    appOpened = true;
+                    document.removeEventListener('visibilitychange', handler);
+                }
+            });
+            
+            // Fallback timeout
+            setTimeout(checkAppOpened, 2500);
+            
+            // Also try direct window.location for some apps
+            setTimeout(() => {
+                if (!appOpened) {
+                    window.location.href = appScheme;
+                    setTimeout(() => {
+                        if (!document.hidden) {
+                            window.location.href = webUrl;
+                        }
+                    }, 1000);
+                }
+            }, 100);
+        }
+
+        // Function to mark button as followed/subscribed
+        function markAsFollowed(button) {
+            const platform = button.getAttribute('data-platform');
+            button.classList.add('followed');
+            
+            // Update button text based on platform
+            if (platform === 'youtube') {
+                button.textContent = 'Subscribed';
+            } else {
+                button.textContent = 'Following';
+            }
+            
+            // Save to localStorage
+            localStorage.setItem(`followed_${platform}`, 'true');
+        }
+
+        // Function to restore followed state from localStorage
+        function restoreFollowedState() {
+            const followButtons = document.querySelectorAll('.follow-btn');
+            
+            followButtons.forEach(button => {
+                const platform = button.getAttribute('data-platform');
+                if (localStorage.getItem(`followed_${platform}`) === 'true') {
+                    markAsFollowed(button);
+                }
+            });
+        }
+
+        // Function to handle Follow button clicks
+        function handleFollowClick(event, followUrl, followApp, button) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            // If already followed, don't do anything
+            if (button.classList.contains('followed')) {
+                return;
+            }
+            
+            // Check if we're on mobile
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (!isMobile) {
+                // On desktop, open follow URL in same page
+                window.location.href = followUrl;
+                // Don't mark as followed - user needs to actually follow
+                return;
+            }
+
+            // Try to open the app first
+            let appOpened = false;
+            const startTime = Date.now();
+            
+            // Create a hidden iframe to attempt app launch
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = followApp;
+            document.body.appendChild(iframe);
+            
+            // Check if app opened by monitoring page visibility
+            const checkAppOpened = () => {
+                const elapsed = Date.now() - startTime;
+                
+                // If page lost focus quickly, app likely opened
+                if (document.hidden || elapsed < 2000) {
+                    appOpened = true;
+                }
+                
+                // Clean up iframe
+                setTimeout(() => {
+                    if (document.body.contains(iframe)) {
+                        document.body.removeChild(iframe);
+                    }
+                }, 100);
+                
+                // If app didn't open, fallback to web follow URL
+                if (!appOpened && elapsed >= 2000) {
+                    window.location.href = followUrl;
+                }
+            };
+            
+            // Listen for page visibility changes
+            document.addEventListener('visibilitychange', function handler() {
+                if (document.hidden) {
+                    appOpened = true;
+                    document.removeEventListener('visibilitychange', handler);
+                }
+            });
+            
+            // Fallback timeout
+            setTimeout(checkAppOpened, 2500);
+            
+            // Also try direct window.location for some apps
+            setTimeout(() => {
+                if (!appOpened) {
+                    window.location.href = followApp;
+                    setTimeout(() => {
+                        if (!document.hidden) {
+                            window.location.href = followUrl;
+                        }
+                    }, 1000);
+                }
+            }, 100);
+        }
+
+
+        // Attach event listeners to Follow buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Restore followed state from localStorage
+            restoreFollowedState();
+            
+            const followButtons = document.querySelectorAll('.follow-btn');
+            
+            followButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const followUrl = this.getAttribute('data-follow-url');
+                    const followApp = this.getAttribute('data-follow-app');
+                    handleFollowClick(e, followUrl, followApp, this);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
